@@ -1,4 +1,4 @@
-$mainColor: #6FA457;
+$mainColor: #6fa457;
 
 html {
   box-sizing: border-box;
@@ -13,25 +13,25 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .grid {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
 
-    @media (max-width: 1028px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  @media (max-width: 1028px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    @media (max-width: 650px) {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .card {
@@ -41,45 +41,45 @@ body {
   display: flex;
   flex-direction: column;
 
-  .card-image {
+  &-image {
     width: 100%;
     height: auto;
   }
 
-  .card-content {
+  &-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
     padding: 1rem;
 
-    .card-content-body {
-        text-align: justify;
+    &-body {
+      text-align: justify;
     }
 
-    .card-content-published {
+    &-published {
       align-self: flex-end;
-      .card-content-published__text {
+      &__text {
         font-weight: bold;
       }
-      .card-content-published__date {
+      &__date {
         color: $mainColor;
       }
     }
 
-    .card-content-button {
-        width: 100%;
-        background: $mainColor;
-        color: white;
-        border: none;
-        padding: 0.5rem 0.75rem;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-  
-        &:hover {
-          background: lighten( $mainColor, 10% );
-        }
+    &-button {
+      width: 100%;
+      background: $mainColor;
+      color: white;
+      border: none;
+      padding: 0.5rem 0.75rem;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+
+      &:hover {
+        background: lighten($mainColor, 10%);
       }
+    }
   }
 }
