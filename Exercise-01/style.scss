@@ -1,0 +1,55 @@
+$colors: red, blue, green;
+
+.container-1,
+.container-2,
+.container-3 {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem;
+
+  .box {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+
+    + .box {
+      margin-left: 1rem;
+    }
+
+    .color-box-text {
+      color: gray;
+    }
+  }
+
+  .base-color {
+    .color-box-text {
+      color: white;
+    }
+  }
+}
+
+@mixin gradient-container($id, $baseColor) {
+  .container-#{$id} {
+    .base-color {
+      background-color: $baseColor;
+    }
+    @for $j from 1 through 4 {
+      .darken-#{$j} {
+        background-color: darken($baseColor, $j * 5%);
+      }
+      .lighten-#{$j} {
+        background-color: lighten($baseColor, $j * 5%);
+      }
+    }
+  }
+}
+
+@for $i from 1 through length($colors) {
+  $color: nth($colors, $i);
+  @include gradient-container($i, $color)
+}
+
+

@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  padding: 0.5rem 1rem;
+}
+
+.menu {
+  list-style: none;
+  background-color: #005f70;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: #1e3e4c;
+    }
+  }
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
